@@ -17,36 +17,35 @@ public class CWH_20_Rock_Paper_Scissors {
         System.out.println("Enter a number between 0 to 2 [ (0 = Rock),(1 = Paper),(2 = Scissor) ] ");
         userInput = sc.nextInt();
 
-        while (userInput > 2) {
+        while (userInput > 2 || userInput<0) {
             System.out.println("Invalid input, Please enter a number between 0 to 2");
             userInput = sc.nextInt();
         }
 
         //user selections
         if (userInput == rock) {
-            System.out.println("User chose ROCK");
+            System.out.println("User choose ROCK");
         }
-        else {
-            if (userInput == paper) {
-                System.out.println("User chose PAPER");
-            } else {
-                System.out.println("User chose SCISSORS");
-            }
+        else if (userInput == paper) {
+            System.out.println("User choose PAPER");
+        }
+        else if (userInput == scissor){
+                System.out.println("User choose SCISSORS");
         }
 
-            //Computer input:
+
+        //Computer input:
             int compInput;
             compInput = random.nextInt(3);
             //computer selection
             if (compInput == rock) {
                 System.out.println("Computer chose ROCK");
             }
-            else {
-                if (compInput == paper) {
-                    System.out.println("Computer chose PAPER");
-                } else {
-                    System.out.println("Computer chose SCISSORS");
-                }
+            else if (compInput == paper) {
+                System.out.println("Computer choose PAPER");
+            }
+            else if (compInput == scissor){
+                System.out.println("Computer choose SCISSORS");
             }
             // Draw section
             while (userInput == compInput) {
@@ -55,51 +54,34 @@ public class CWH_20_Rock_Paper_Scissors {
                 userInput = sc.nextInt();
                 //user selections
                 if (userInput == rock) {
-                    System.out.println("User chose ROCK");
-                } else {
-                    if (userInput == paper) {
-                        System.out.println("User chose PAPER");
-                    } else {
-                        System.out.println("User chose SCISSORS");
-                    }
+                    System.out.println("User choose ROCK");
+                } else if (userInput == paper) {
+                    System.out.println("User choose PAPER");
+                } else if (userInput == scissor) {
+                    System.out.println("User choose SCISSORS");
                 }
 
-                    compInput = random.nextInt(3);
+                compInput = random.nextInt(3);
 
-                    //computer selection
-                    if (compInput == rock) {
-                        System.out.println("Computer chose ROCK");
-                    } else {
-                        if (compInput == paper) {
-                            System.out.println("Computer chose PAPER");
-                        } else {
-                            System.out.println("Computer chose SCISSORS");
-                        }
-                    }
+                //computer selection
+                if (compInput == rock) {
+                    System.out.println("Computer chose ROCK");
+                } else if (compInput == paper) {
+                    System.out.println("Computer choose PAPER");
+                } else if (compInput == scissor) {
+                    System.out.println("Computer choose SCISSORS");
                 }
+            }
 
 
                 //-----RESULT-----
+        if((userInput == 0 && compInput ==2)  || (userInput ==1 && compInput == 0) || (userInput ==2 || compInput ==1)){
+            System.out.println("You win!!");
+        }
+        else{
+            System.out.println("Computer wins ^_^.");
+        }
 
-                if (compInput == rock) {
-                    if (userInput == paper) {
-                        System.out.println("You win!!");
-                    } else {
-                        System.out.println("Computer wins ^_^.");
-                    }
-                } else if (compInput == paper) {
-                    if (userInput == rock) {
-                        System.out.println("Computer wins ^_^.");
-                    } else {
-                        System.out.println("You win!!");
-                    }
-                } else if (compInput == scissor) {
-                    if (userInput == paper) {
-                        System.out.println("Computer wins ^_^.");
-                    } else {
-                        System.out.println("You win!!");
-                    }
-                }
                 
     } // main ends
 }// class ends
